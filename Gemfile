@@ -57,3 +57,5 @@ gem 'carrierwave'
 
 #画像を縮小
 gem 'mini_magick'
+
+gem 'kaminari'
