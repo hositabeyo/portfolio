@@ -20,12 +20,12 @@
   </head>
   <body>
   <div class="center jumbotron" id="post">
-    <%= image_tag('ハロウィンテスラ2.png')%>
+    <%= image_tag @post.image.url %>
       <div class="container-fluid text-right">
         <div class="title" id="title">
-          <h2>見出しテキストテキスト</h2>
+          <h2><%= @post.title %></h2>
           <div class="content"　id="content">
-            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーで
+            <%= @post.content %>  
           </div>
         </div>
       </div>
