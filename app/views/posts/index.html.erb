@@ -1,0 +1,6 @@
+<ul>
+    <% @posts.each do |post| %>
+        <li><%= image_tag(post.image.url) if post.image %>
+            <%= post.title %></li>
+    <% end %>
+</ul>
