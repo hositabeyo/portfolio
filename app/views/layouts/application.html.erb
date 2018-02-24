@@ -11,6 +11,42 @@
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=”text/javascript” src=”wookmark.min.js”></script>
+
+
+<script type=”text/javascript”>
+(function ($){
+$(‘#item’).imagesLoaded(function() {
+// Prepare layout options.
+var options = {
+autoResize: true, // This will auto-update the layout when the browser window is resized.
+container: $(‘#gallery’), // Optional, used for some extra CSS styling
+offset: 2, // Optional, the distance between grid items
+itemWidth: 210 // Optional, the width of a grid item
+};
+
+// Get a reference to your grid items.
+var handler = $(‘#item li’);
+
+// Call the layout function.
+handler.wookmark(options);
+
+// Capture clicks on grid items.
+handler.click(function(){
+// Randomize the height of the clicked item.
+var newHeight = $(‘img’, this).height() + Math.round(Math.random()*300+30);
+$(this).css(‘height’, newHeight+’px’);
+
+// Update the layout.
+handler.wookmark();
+});
+});
+})(jQuery);
+</script>
+
+
   </head>
 
   <body>
@@ -46,18 +82,26 @@
         <div class="row">
           
           <div class="col-sm-3 text-center" id="aside">
-            <%= image_tag('logo.png') %>
+            <div class="col-xs-12 visible-xs">
+              <div class="container">
+              <%= image_tag('xslogo.png') %>
+              </div>
+            </div>
             <div class="col-xs-12 hidden-xs">
+                <%= image_tag('logo.png') %>
             <h3>サイト名</h3>
             </div>
             <li><%= link_to 'TOP', index_path %></li>
-            <li><%= link_to 'GALLERY', gallery_path %></li>
             <% if logged_in? %>
             <li><%= link_to 'EDIT', edit_path %></li>
             <li><%= link_to 'LOGOUT', logout_path, method: :delete %></li>
             <% else %>
+            <li><%= link_to 'GALLERY', gallery_path %></li>
             <li><%= link_to 'LOGIN', login_path %></li>
             <% end %>
+            <%= link_to image_tag('twitter.png'), 'https://twitter.com/hoshita_bell' %>
+            <%= link_to image_tag('pixiv.png'), 'https://pixiv.me/hoshitabell' %>
+            <%= link_to image_tag('mail'), 'https://pixiv.me/hoshitabell' %>
             </ul>
           </div>
           <div class="col-sm-9" id="main">

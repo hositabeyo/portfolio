@@ -1,10 +1,15 @@
-  <div class="center jumbotron" id="post">
+  <div class="center jumbotron" id="post2">
     <%= image_tag @post.image.url %>
       <div class="container-fluid text-right">
-        <div class="title" id="title">
+        <div class="title2" id="title">
           <h2><%= @post.title %></h2>
           <div class="content"　id="content">
             <%= @post.content %>  
+            <% if logged_in? %>
+            <li><%= link_to 'DELETE', @post, method: :delete , data: { confirm: '本当に削除してよろしいですか？' } %></li>
+            <% else %>
+            <li><%= link_to 'BACK', gallery_path %></li>
+            <% end %>
           </div>
         </div>
       </div>

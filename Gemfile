@@ -56,6 +56,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 
 #画像を縮小
-gem 'mini_magick'
+gem 'rmagick'
+
+gem 'cloudinary'
 
 gem 'kaminari'
+
+group :production do
+  gem 'pg', '0.21.0'
+end

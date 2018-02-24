@@ -1,4 +1,16 @@
-#portforio {
+#gallery {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+#item {
+  /*margin: 0 10px;*/
+  width: 150px;
+  padding: 0px;
+}
+
+@media screen and (max-width: 767px) {
+ #portforio {
   list-style:none;
   #aside {
     background: #afafb0;
@@ -12,6 +24,28 @@
   #main {
     padding: 0;
   }
+} 
+}
+@media screen and (min-width: 768px) {
+#portforio {
+    position: absolute;
+	left: 0;
+  list-style:none;
+    padding: 0;
+  #aside {
+    background: #afafb0;
+    height: 100vh;
+    color: #FFF;
+    a:link { color: #fff; }
+    a:visited { color: #fff; }
+    a:hover { color: #fff; }
+    a:active { color: #fff; }
+    padding: 0;
+  }
+  #main {
+    padding: 0;
+  }
+}
 }
 
 
@@ -39,4 +73,38 @@
              2px -2px 2px #fff,
              -2px -2px 2px #fff;
 
+}
+
+
+@media screen and (max-width: 767px) {
+   /* 表示領域が767px以下の場合に適用するスタイル */
+#post2 {
+width: 100%;
+max-width: 100%;
+height: auto;
+  padding: 0;
+ }
+ 
+#post2 > img {
+    object-fit: cover; /* IE: not support */
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+ 
+}
+@media screen and (min-width: 768px) {
+   /* 表示領域が768px以上の場合に適用するスタイル */
+#post2 {
+  position: relative;
+  height: 100vh;
+  padding: 0;
+ }
+ 
+#post2 > img {
+    object-fit: contain;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+}
 }

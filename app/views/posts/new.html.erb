@@ -3,22 +3,16 @@
 <!--<%#= f.file_field :image %>-->
 <!--<%#= f.hidden_field :image_cache %>-->
 <!--<%# end %>-->
+<h3>NEW POST</h3>
 
-<%= form_for(@post) do |f| %>
+<%= render 'layouts/edit' %>
 
-  <div class="form-group">
-    <%= f.label :title, 'TITLE' %>
-    <%= f.text_field :title %>
-  </div>
+<h3>POST EDIT</h3>
 
-  <div class="form-group">
-    <%= f.label :content, 'CONTENT' %>
-    <%= f.text_field :content %>
-  </div>
-  
-  <%= f.label :image, 'IMAGE' %><br>
-  <%= f.file_field :image %>
-  <%= f.hidden_field :image_cache %>
-
-  <%= f.submit '投稿' %>
-<% end %>
+<table class="table-striped">
+<% @posts.each do |post| %>
+<tr>
+  <td class="text-center">
+     <%= link_to post.title, post %></td>
+  <% end %>
+</tr>

@@ -5,9 +5,22 @@
     <% end %>
 </ul>-->
 
-<ul>
-    <% @posts.each do |post| %>
-        <li><%= link_to image_tag(post.image.url), post %>
-            <%= post.title %></li>
-    <% end %>
-</ul>
+<!--<div id="gallery" role=”gallery”>-->
+<!--<ul style="list-style:none;" >-->
+<!--    <%# @posts.each do |post| %>-->
+<!--        <li id= "item"><%#= link_to image_tag(post.image.thumb.url), post %></li>-->
+<!--    <%# end %>-->
+<!--</ul>-->
+<!--</div>-->
+
+
+
+
+    <div class="row">
+        <% @posts.each do |post| %>
+            <div class="col-sm-6 col-md-4  col-lg-3">
+                <%= link_to image_tag(post.image.thumb.url, style: 'width: 100%;'), post %>
+            </div>
+        <% end %>
+    </div>
+    <%= paginate @posts %>
