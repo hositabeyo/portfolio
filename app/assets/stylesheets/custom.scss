@@ -23,15 +23,16 @@
   }
   #main {
     padding: 0;
+    
   }
 } 
 }
 @media screen and (min-width: 768px) {
 #portforio {
     position: absolute;
-	left: 0;
   list-style:none;
-    padding: 0;
+  padding: 0;
+      	width: 100%;
   #aside {
     background: #afafb0;
     height: 100vh;
@@ -73,6 +74,14 @@
              2px -2px 2px #fff,
              -2px -2px 2px #fff;
 
+}
+
+#content {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 
